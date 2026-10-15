@@ -1,0 +1,555 @@
+/* ==========================================
+   VARIABLES DE PALETA DE COLORES
+   ========================================== */
+   :root {
+    --dark-green: #0A3323;     /* Encabezados principales, footer */
+    --moss-green: #839958;     /* Detalles, bordes, elementos secundarios */
+    --beige: #F7F4D5;          /* Fondo principal de la página */
+    --rosy-brown: #D3968C;      /* Acentos, insignias, hovers */
+    --midnight-green: #105666;  /* Barra de navegación, subtítulos */
+    
+    --white: #FFFFFF;
+    --text-dark: #1F2A24;
+    --shadow: rgba(10, 51, 35, 0.12);
+  }
+  
+  /* ==========================================
+     ESTILOS GENERALES Y RESETS
+     ========================================== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background-color: var(--beige);
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 1rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* CANVAS DE FONDO ANIMADO DINÁMICO */
+  #bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+  
+  /* ==========================================
+     ENCABEZADO (HEADER & NAV)
+     ========================================== */
+  header {
+    background-color: var(--dark-green);
+    color: var(--beige);
+    border-bottom: 5px solid var(--moss-green);
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  
+  /* Icono Hero Animado */
+  .header-hero-icon {
+    margin-bottom: 0.8rem;
+  }
+  
+  .scale-svg {
+    width: 55px;
+    height: 55px;
+    color: var(--rosy-brown);
+    animation: floatIcon 3.5s ease-in-out infinite;
+  }
+  
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-7px) rotate(2deg); }
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--beige);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  header .subtitle {
+    font-size: 1.1rem;
+    color: var(--rosy-brown);
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  
+  /* Navegación */
+  nav {
+    margin-top: 1.5rem;
+    background-color: var(--midnight-green);
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  nav a {
+    color: var(--beige);
+    text-decoration: none;
+    padding: 0.6rem 0.9rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background-color: var(--rosy-brown);
+    color: var(--dark-green);
+  }
+  
+  /* ==========================================
+     CONTENIDO PRINCIPAL (MAIN)
+     ========================================== */
+  main {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 5;
+  }
+  
+  section {
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 6px 20px var(--shadow);
+    border: 1px solid rgba(131, 153, 88, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  section:hover {
+    box-shadow: 0 10px 25px rgba(10, 51, 35, 0.15);
+  }
+  
+  section h2 {
+    color: var(--dark-green);
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--moss-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--midnight-green);
+    flex-shrink: 0;
+  }
+  
+  section p {
+    margin-bottom: 1.2rem;
+  }
+  
+  article {
+    margin-top: 1.8rem;
+  }
+  
+  article h3 {
+    color: var(--midnight-green);
+    font-size: 1.35rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Tarjeta Gráfica de Medios/Imagen */
+  .media-card {
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    border: 2px solid var(--moss-green);
+  }
+  
+  .featured-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  .media-card:hover .featured-img {
+    transform: scale(1.03);
+  }
+  
+  .media-caption {
+    background-color: var(--dark-green);
+    color: var(--beige);
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  /* Citas Legales */
+  .legal-quote {
+    background-color: rgba(247, 244, 213, 0.7);
+    border-left: 5px solid var(--moss-green);
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .legal-quote header {
+    background: none;
+    color: var(--dark-green);
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+  }
+  
+  .legal-quote p {
+    font-style: italic;
+    margin-bottom: 0;
+    color: var(--dark-green);
+  }
+  
+  /* Caja del Mito */
+  .myth-box {
+    background-color: rgba(211, 150, 140, 0.12);
+    border: 2px solid var(--rosy-brown);
+    border-radius: 10px;
+    padding: 1.8rem;
+    position: relative;
+    margin-top: 1rem;
+  }
+  
+  .verdict-badge {
+    display: inline-block;
+    background-color: var(--rosy-brown);
+    color: var(--dark-green);
+    font-weight: 800;
+    padding: 0.38rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    animation: pulseBadge 2.5s infinite;
+  }
+  
+  @keyframes pulseBadge {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 150, 140, 0.6); }
+    50% { transform: scale(1.03); box-shadow: 0 0 0 8px rgba(211, 150, 140, 0); }
+  }
+  
+  .myth-statement {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark-green);
+  }
+  
+  /* ==========================================
+     INFOGRAFÍA COMPARATIVA DINÁMICA
+     ========================================== */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 1.5rem;
+  }
+  
+  .comp-card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  
+  .old-system {
+    background-color: #fdf2f0;
+    border-top: 4px solid #d9534f;
+  }
+  
+  .new-system {
+    background-color: #f0f7f4;
+    border-top: 4px solid var(--moss-green);
+  }
+  
+  .comp-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+  
+  .comp-list {
+    list-style: none;
+    font-size: 0.93rem;
+  }
+  
+  .comp-list li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  
+  .comp-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+  
+  .progress-bar-container {
+    margin-top: 1.2rem;
+  }
+  
+  .bar-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .bar-bg {
+    background-color: #e0e0e0;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1s ease;
+  }
+  
+  .fill-high {
+    width: 90%;
+    background-color: #d9534f;
+  }
+  
+  .fill-low {
+    width: 25%;
+    background-color: var(--moss-green);
+  }
+  
+  /* ==========================================
+     MAPA INTERACTIVO (LEAFLET)
+     ========================================== */
+  #map-container {
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    border: 2px solid var(--moss-green);
+  }
+  
+  #map {
+    height: 350px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .map-info-box {
+    background-color: var(--midnight-green);
+    color: var(--beige);
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  /* ==========================================
+     TARJETAS DE PREGUNTAS Y REFLEXIONES
+     ========================================== */
+  .step-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step-list li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .qa-card {
+    background-color: rgba(16, 86, 102, 0.05);
+    border-left: 4px solid var(--midnight-green);
+    padding: 1.2rem 1.5rem;
+    margin-top: 1.2rem;
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.2s ease;
+  }
+  
+  .qa-card:hover {
+    transform: translateX(4px);
+  }
+  
+  .qa-card h4 {
+    color: var(--midnight-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Tarjetas de Autores / Reflexiones */
+  .author-card {
+    display: flex;
+    gap: 15px;
+    background-color: #ffffff;
+    border: 1px solid rgba(131, 153, 88, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  
+  .author-avatar {
+    width: 55px;
+    height: 55px;
+    background-color: var(--dark-green);
+    color: var(--beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    border: 2px solid var(--moss-green);
+  }
+  
+  .author-content h4 {
+    color: var(--dark-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .student-id {
+    font-size: 0.85rem;
+    color: var(--midnight-green);
+    font-weight: normal;
+    background-color: rgba(16, 86, 102, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+  
+  /* Referencias APA */
+  .apa-reference {
+    padding-left: 2rem;
+    text-indent: -2rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  /* ==========================================
+     PIE DE PÁGINA Y BOTÓN FLOTANTE
+     ========================================== */
+  footer {
+    background-color: var(--dark-green);
+    color: var(--beige);
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    margin-top: 3rem;
+    border-top: 5px solid var(--moss-green);
+    position: relative;
+    z-index: 10;
+  }
+  
+  footer p {
+    margin: 0.3rem 0;
+    font-size: 0.92rem;
+  }
+  
+  .footer-note {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin-top: 0.8rem !important;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--moss-green);
+    color: var(--dark-green);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  
+  .back-to-top:hover {
+    background-color: var(--midnight-green);
+    color: var(--beige);
+    transform: translateY(-4px);
+  }
+  
+  /* ==========================================
+     RESPONSIVE DESIGN (MÓVILES)
+     ========================================== */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.6rem;
+    }
+    
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav a {
+      text-align: center;
+    }
+  
+    section {
+      padding: 1.5rem;
+    }
+  
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .author-card {
+      flex-direction: column;
+    }
+  }

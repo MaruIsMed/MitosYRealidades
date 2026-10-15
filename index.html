@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitos y Realidades en Materia de Derecho Civil | Puebla</title>
+    
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Librería Leaflet.js para el Mapa Interactivo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    
+    <!-- Script principal -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- CANVAS PARA FONDO ANIMADO DINÁMICO -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ==========================================================================
+         ENCABEZADO PRINCIPAL (HEADER & NAV)
+         ========================================================================== -->
+    <header>
+        <div class="header-container">
+            <!-- Icono SVG Dinámico en el Encabezado -->
+            <div class="header-hero-icon">
+                <svg viewBox="0 0 24 24" class="scale-svg" aria-hidden="true">
+                    <path fill="currentColor" d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 2.18L18.6 7 12 10 5.4 7 12 4.18zM4 19h16v2H4v-2zm8-8l-7 3.18V17h14v-2.82L12 11z"/>
+                </svg>
+            </div>
+            
+            <h1>Análisis Jurídico: El Divorcio Incausado en el Estado de Puebla</h1>
+            <p class="subtitle">Interpretación de los Artículos 442 y 443 del Código Civil Estatal y Desmitificación del "Divorcio Exprés"</p>
+            
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#marco-legal">1. Marco Legal</a></li>
+                    <li><a href="#analisis-mito">2. Desmitificación</a></li>
+                    <li><a href="#infografia">3. Comparativa Visual</a></li>
+                    <li><a href="#guia-investigacion">4. Guía Metodológica</a></li>
+                    <li><a href="#reflexiones">5. Reflexiones</a></li>
+                    <li><a href="#referencias">6. Fuentes APA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         CONTENIDO PRINCIPAL (MAIN)
+         ========================================================================== -->
+    <main>
+
+        <!-- SECCIÓN 1: MARCO LEGAL -->
+        <section id="marco-legal">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                1. Marco Legal: Artículos 442 y 443 del Código Civil de Puebla
+            </h2>
+            <p>
+                El ordenamiento jurídico en materia civil para el Estado Libre y Soberano de Puebla transformó de manera sustancial la figura de la disolución del matrimonio, transitando de un modelo causalista (donde se exigía acreditar culpas o conductas específicas) a un esquema sustentado en la autonomía de la voluntad. Dicha regulación encuentra su núcleo regulatorio procesal y sustantivo en los Artículos 442 y 443.
+            </p>
+
+            <!-- Tarjeta Gráfica con Imagen Destacada -->
+            <div class="media-card">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=80" alt="Maza y balanza de la justicia" class="featured-img" />
+                <div class="media-caption">Corte y Sede del Poder Judicial: Garantía de Derechos Fundamentales.</div>
+            </div>
+
+            <article>
+                <h3>Artículo 442: El Principio de Voluntariedad e Incausabilidad</h3>
+                <div class="legal-quote">
+                    <header>Texto Normativo (Art. 442):</header>
+                    <p>
+                        «El divorcio incausado podrá solicitarse por cualquiera de los cónyuges o por ambos, ante Juez de lo Familiar competente, con la sola manifestación de la voluntad de no querer continuar con el matrimonio, sin necesidad de señalar la causa por la cual se solicita.»
+                    </p>
+                </div>
+                <p>
+                    <strong>Análisis dogmático:</strong> Este precepto consagra formalmente el divorcio incausado o unilateral en la entidad. Elimina la exigencia histórica de probar "causales de divorcio" (tales como adulterio, abandono de hogar o violencia doméstica). Bastará con la manifestación expresa e inequívoca de uno solo de los consortes ante el órgano jurisdiccional para dar inicio al trámite de disolución marital.
+                </p>
+            </article>
+
+            <article>
+                <h3>Artículo 443: La Propuesta de Convenio Regulador</h3>
+                <div class="legal-quote">
+                    <header>Texto Normativo (Art. 443):</header>
+                    <p>
+                        «El cónyuge que unilateralmente desee promover el juicio de divorcio deberá acompañar a su solicitud la propuesta de convenio para regular las consecuencias inherentes a la disolución del vínculo matrimonial, debiendo contener los siguientes requisitos:
+                        I. La designación sobre el cuidado y custodia de los hijos menores o incapaces;
+                        II. El modo de regular el derecho de visitas y convivencias;
+                        III. El modo de atender las necesidades de los hijos y, en su caso, del cónyuge a quien deba darse alimentos;
+                        IV. La designación del cónyuge al que corresponderá el uso del domicilio conyugal y los enseres;
+                        V. La manera de administrar y liquidar los bienes de la sociedad conyugal...»
+                    </p>
+                </div>
+                <p>
+                    <strong>Análisis dogmático:</strong> Mientras que la disolución de la relación jurídica matrimonial es libre y unilateral, el Artículo 443 garantiza que los derechos de terceros vulnerables (hijos menores de edad, incapaces o cónyuges acreedores alimentarios) queden plenamente protegidos mediante la obligatoriedad de presentar una propuesta formal de convenio.
+                </p>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 2: ANÁLISIS DEL MITO -->
+        <section id="analisis-mito">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                2. Análisis y Desmitificación de Creencias Populares
+            </h2>
+
+            <article class="myth-box">
+                <span class="verdict-badge">VEREDICTO: FALSO</span>
+                <p class="myth-statement">
+                    Mito A: «Para poder divorciarte en Puebla, necesitas una causa grave (como infidelidad o abandono) y que tu pareja esté de acuerdo en firmar.»
+                </p>
+                <p>
+                    <strong>Desarrollo Legal:</strong> La creencia popular de que el divorcio requiere la comisión de una "falta grave" o el consentimiento del otro cónyuge es plenamente obsoleta e inconstitucional bajo el marco jurídico mexicano contemporáneo.
+                </p>
+                <p>
+                    En el Estado de Puebla no es necesario probar ninguna causal ni obtener la firma o asentimiento de la contraparte para disolver el matrimonio. El matrimonio es una institución jurídica basada en la voluntad de ambas partes; en el momento en que dicha voluntad cesa en una de ellas, el Estado no puede coaccionar la permanencia de la unión civil. Si la contraparte se opone o se niega a firmar, el Juez de lo Familiar decreta de todos modos la disolución del vínculo matrimonial, dejando la controversia sobre los bienes o la custodia para una etapa incidental posterior.
+                </p>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 3: INFOGRAFÍA COMPARATIVA DINÁMICA -->
+        <section id="infografia">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14I5 12h2v5zm4 0h-2V9h2v8zm4 0h-2v-4h2v4z"/></svg>
+                3. Infografía Dinámica: Divorcio Causal vs. Incausado
+            </h2>
+            <p>Representación visual del impacto procesal tras la reforma al Código Civil de Puebla:</p>
+
+            <div class="comparison-grid">
+                <div class="comp-card old-system">
+                    <h3>Modelo Anterior (Causalista)</h3>
+                    <ul class="comp-list">
+                        <li><strong>Exigencia:</strong> Probar culpa grave (adulterio, abandono).</li>
+                        <li><strong>Consentimiento:</strong> Requería firma/acuerdo de ambas partes.</li>
+                        <li><strong>Tiempo promedio:</strong> 2 a 5 años de litigio.</li>
+                        <li><strong>Carga emocional:</strong> Proceso desgastante y hostil.</li>
+                    </ul>
+                    <div class="progress-bar-container">
+                        <span class="bar-label">Duración y Complejidad Procesal</span>
+                        <div class="bar-bg"><div class="bar-fill fill-high"></div></div>
+                    </div>
+                </div>
+
+                <div class="comp-card new-system">
+                    <h3>Modelo Actual (Incausado)</h3>
+                    <ul class="comp-list">
+                        <li><strong>Exigencia:</strong> Solo la voluntad unilateral (Art. 442).</li>
+                        <li><strong>Consentimiento:</strong> No requiere la firma del cónyuge.</li>
+                        <li><strong>Tiempo promedio:</strong> Meses (resolución rápida).</li>
+                        <li><strong>Garantía:</strong> Protege la dignidad y libre desarrollo.</li>
+                    </ul>
+                    <div class="progress-bar-container">
+                        <span class="bar-label">Duración y Complejidad Procesal</span>
+                        <div class="bar-bg"><div class="bar-fill fill-low"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: GUÍA DE INVESTIGACIÓN Y PREGUNTAS CLAVE -->
+        <section id="guia-investigacion">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3z"/></svg>
+                4. Guía de Investigación y Preguntas Clave
+            </h2>
+
+            <article>
+                <h3>Metodología de Búsqueda Jurídica Oficial</h3>
+                <p>
+                    Para verificar la vigencia y aplicación de las normas en materia civil en México, el profesional o estudiante del Derecho debe consultar únicamente fuentes oficiales primarias:
+                </p>
+                <ol class="step-list">
+                    <li><strong>Periódico Oficial del Estado de Puebla (POE):</strong> Portal oficial del Gobierno del Estado donde se publican los decretos de reforma al Código Civil y al Código de Procedimientos Civiles.</li>
+                    <li><strong>Código Civil para el Estado Libre y Soberano de Puebla:</strong> Texto ordenado y actualizado disponible en la biblioteca del H. Congreso del Estado de Puebla.</li>
+                    <li><strong>Semanario Judicial de la Federación (SJF):</strong> Base de datos de la Suprema Corte de Justicia de la Nación (SCJN) donde se consultan jurisprudencias de carácter obligatorio sobre divorcio incausado.</li>
+                </ol>
+            </article>
+
+            <article>
+                <h3>Respuestas Desarrolladas a las Preguntas Guía</h3>
+
+                <div class="qa-card">
+                    <h4>a) ¿El mito analizado es Falso o Verdadero en el Estado de Puebla?</h4>
+                    <p>
+                        Es <strong>FALSO</strong>. No se requiere justificar causas de culpa ni se exige el consentimiento, aceptación o "firma" del cónyuge demandado para obtener la sentencia de divorcio.
+                    </p>
+                </div>
+
+                <div class="qa-card">
+                    <h4>b) ¿Cómo funciona la ley actualmente en Puebla respecto al divorcio?</h4>
+                    <p>
+                        El procedimiento opera bajo la figura del <em>divorcio incausado</em> (unilateral o bilateral):
+                    </p>
+                    <ul class="step-list">
+                        <li>Cualquiera de los cónyuges acude ante el Juez de lo Familiar e interpone la solicitud de divorcio unilateral, adjuntando la propuesta de convenio regulador conforme al Art. 443.</li>
+                        <li>Se notifica y emplaza al otro cónyuge para que manifieste su conformidad o presente una contrapropuesta de convenio.</li>
+                        <li>Independientemente de que la contraparte esté de acuerdo o no con el convenio, o de que no responda, el Juez emite la sentencia que disuelve el matrimonio.</li>
+                        <li>Si existen desacuerdos respecto a alimentos, custodia o bienes, el divorcio se decreta de forma inmediata y las diferencias del convenio se resuelven mediante la vía incidental.</li>
+                    </ul>
+                </div>
+
+                <div class="qa-card">
+                    <h4>c) ¿Por qué cambió la ley y qué derecho humano está protegiendo?</h4>
+                    <p>
+                        La legislación cambió en observancia a los criterios obligatorios emitidos por la Suprema Corte de Justicia de la Nación (SCJN), los cuales determinaron que el régimen de divorcio necesario o causalista vulneraba sistemáticamente el derecho fundamental al <strong>Libre Desarrollo de la Personalidad</strong> (derivado de la dignidad humana consagrada en el Artículo 1º de la Constitución Política de los Estados Unidos Mexicanos).
+                    </p>
+                    <p>
+                        El Libre Desarrollo de la Personalidad tutela la capacidad de cada individuo para elegir en forma autónoma su proyecto de vida. La decisión de mantenerse o no en matrimonio forma parte indisoluble de dicha autonomía individual. Obligar a una persona a permanecer casada en contra de su voluntad o forzarla a someterse a un proceso judicial estigmatizante para probar faltas ajenas viola su dignidad e intimidad.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 5: REFLEXIONES DE LOS AUTORES -->
+        <section id="reflexiones">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 21l3.68-.97C9.44 20.61 10.68 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+                5. Reflexiones Académicas
+            </h2>
+
+            <div class="author-card">
+                <div class="author-avatar">MEI</div>
+                <div class="author-content">
+                    <h4>María Eugenia Islas Medina <span class="student-id">A01820268</span></h4>
+                    <p>
+                        El libre desarrollo de una persona influye de forma significativa en sus decisiones cotidianas,
+                        al permitirnos desenvolvernos en diferentes ámbitos, en este caso, referente al matrimonio. Debido 
+                        a diferentes tradiciones, era normal no solicitar divorcios a menos de que se considerara <em>"necesario"</em> o
+                        por <em>"fuerzas mayores"</em> como la infidelidad, abandono al hogar o violencia.
+                        <br><br>
+                        Los procesos eran largos y desgastantes para los involucrados, además de requerir siempre la aprobación de la otra parte,
+                        lo cual podía generar conflictos largos y costosos en el tiempo. Reconocer a través de reformas de este tipo, el libre ejercicio
+                        de la personalidad ha permitido a los individuos desarrollarse sin limitations culturales o sociales, actuando más bien a partir
+                        de su voluntad y sistema de creencias.
+                    </p>
+                </div>
+            </div>
+
+            <div class="author-card">
+                <div class="author-avatar">ACA</div>
+                <div class="author-content">
+                    <h4>Alan Cabrera Arellano <span class="student-id">A01752863</span></h4>
+                    <p>
+                        La libertad de decisión al momento de solicitar un divorcio es un derecho que debe ser respetado
+                        y protegido. Esta elección mantiene y se adecua al derecho humano de libre personalidad, el simple 
+                        hecho de no respetarlo es antitético a este mismo. El divorcio incausado no solo representa un avance
+                        jurídico, sino también un reconocimiento a la dignidad y autonomía de las personas, permitiendo que cada 
+                        individuo decida sobre su vida sin imposiciones externas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: FUENTES Y REFERENCIAS (FORMATO APA) -->
+        <section id="referencias">
+            <h2>
+                <svg class="section-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                6. Fuentes y Referencias Bibliográficas
+            </h2>
+
+            <p class="apa-reference">
+                Congreso del Estado de Puebla. (1985). <em>Código Civil para el Estado Libre y Soberano de Puebla</em>. Última reforma publicada en el Periódico Oficial del Estado de Puebla.
+            </p>
+
+            <p class="apa-reference">
+                Pérez Contreras, M. de M. (2018). <em>Derecho de familia y el divorcio incausado en México: Reflexiones a la luz de los derechos humanos y el libre desarrollo de la personalidad</em>. Instituto de Investigaciones Jurídicas de la UNAM.
+            </p>
+
+            <p class="apa-reference">
+                Periódico Oficial del Estado de Puebla. (2016). <em>Decreto por el que se reforman y adicionan diversas disposiciones del Código Civil para el Estado Libre y Soberano de Puebla en materia de divorcio sin expresión de causa</em>. Gobierno del Estado de Puebla.
+            </p>
+
+            <p class="apa-reference">
+                Suprema Corte de Justicia de la Nación. (2015). <em>Tesis Jurisprudencial 1a./J. 28/2015 (10a.): Divorcio necesario. El régimen de disolución del matrimonio que exige la demostración de causales, es inconstitucional (Legislaciones de Morelos, Veracruz y análogas)</em>. Gaceta del Semanario Judicial de la Federación, Décima Época, Libro 20, Tomo I, pág. 570.
+            </p>
+
+            <p class="apa-reference">
+                Suprema Corte de Justicia de la Nación. (2019). <em>Tesis Jurisprudencial 1a./J. 43/2019 (10a.): Libre desarrollo de la personalidad. Su dimensión contractual en el matrimonio y en la disolución del vínculo a través del divorcio incausado</em>. Semanario Judicial de la Federación, Décima Época, Libro 68, Tomo I, pág. 191.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================================================== -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>Equipo de Investigación Jurídica:</strong></p>
+            <p>María Eugenia Islas Medina — A01820268</p>
+            <p>Alan Cabrera Arellano — A01752863</p>
+            <p class="footer-note">Documento informativo, gráfico e interactivo académico.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
